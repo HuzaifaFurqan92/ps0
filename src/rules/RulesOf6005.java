@@ -36,9 +36,14 @@ public class RulesOf6005 {
             boolean availableToOthers, boolean writtenAsCourseWork,
             boolean citingYourSource, boolean implementationRequired) {
         
-        // TODO: Fill in this method, then remove the exception
+        // Rule 1: You may always use code you (or your team) wrote yourself.
+        if (writtenByYourself) {
+            return true;
+        }
         
-        throw new RuntimeException("implement me!");
+        // Rule 2: Someone else's code is allowed only if it is publicly available
+        return availableToOthers && !writtenAsCourseWork 
+            && citingYourSource && !implementationRequired;
     }
     
     /**
